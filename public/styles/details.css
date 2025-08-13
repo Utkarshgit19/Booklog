@@ -139,4 +139,7 @@ textarea {
   .details-header { padding: 14px; }
   .details-body { padding: 16px; }
   .details-wrapper { margin: 16px; }
+  .header-buttons .btn{
+    margin: 2px;
+  }
 }
