@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title><%= book.title %> — Details</title>
+  <link rel="stylesheet" href="/styles/details.css">
+</head>
+<body>
+  <div class="details-wrapper">
+
+    <!-- header inside the centered wrapper -->
+    <div class="details-header">
+      <div class="title-group">
+        <h1 class="book-title"><%= book.title %></h1>
+        <div class="book-rating">Rating: <span class="rating-value"><%= book.rating %> / 5</span></div>
+      </div>
+
+      <div class="header-buttons">
+        <!-- edit is a client-side toggle; change form action as needed -->
+        <form id="editForm" action="/book/edit" method="POST">
+          <button type="button" id="editBtn"  class="btn btn-edit">Edit</button>
+          <button type="submit" id="doneBtn" name="edit" value="<%=book.id%>" class="btn btn-done" style="display:none;">Done</button>
+          <button type="submit" name="edit" value="back" class="btn btn-back">back</button>
+        </div>
+    </div>
+    
+    <!-- body: cover left, content right -->
+    <div class="details-body">
+        <div class="cover">
+            <img src="<%= book.coverUrl %>" alt="<%= book.title %> cover">
+        </div>
+        
+        <div class="info">
+            <section class="summary-section">
+                <h2 class="section-title">Summary</h2>
+                <p id="summaryDisplay"><%= book.summary %></p>
+                <textarea id="summaryInput" name="summary" value="<%=book.summary%>" style="display:none;"><%= book.summary %></textarea>
+            </section>
+            
+            <hr class="divider">
+            
+            <section class="notes-section">
+                <h2 class="section-title">Notes</h2>
+                <p id="notesDisplay"><%= book.notes %></p>
+                <textarea id="notesInput" name="notes" value="<%=book.notes%>" style="display:none;"><%= book.notes %></textarea>
+            </section>
+        </div>
+    </form>
+    </div>
+  </div>
+
+  <script>
+    const editBtn = document.getElementById('editBtn');
+    const doneBtn = document.getElementById('doneBtn');
+    const summaryDisplay = document.getElementById('summaryDisplay');
+    const notesDisplay   = document.getElementById('notesDisplay');
+    const summaryInput   = document.getElementById('summaryInput');
+    const notesInput     = document.getElementById('notesInput');
+
+    editBtn.addEventListener('click', () => {
+      // show inputs and Done button, hide static text and Edit button
+      summaryDisplay.style.display = 'none';
+      notesDisplay.style.display = 'none';
+      summaryInput.style.display = 'block';
+      notesInput.style.display = 'block';
+      doneBtn.style.display = 'inline-block';
+      editBtn.style.display = 'none';
+    });
+  </script>
+</body>
+</html>

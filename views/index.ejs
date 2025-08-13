@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Book Collection</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+    <header>
+        <h1><%= name %></h1>
+        <p><%= summary %></p>
+        <div class="add-book-container">
+            <form action="/add" method="post">
+                <button type="submit" class="btn-add-book">+ Add Book</button>
+            </form>
+        </div>
+    </header>
+
+    <main>
+        <%if(books && books.length>0){%>
+        <% books.forEach(book => { %>
+            <div class="book-card">
+                <img src="<%= book.coverurl %>" alt="Book cover">
+                <div class="book-info">
+                    <h2>
+                        <p><%= book.title %></p>
+                    </h2>
+                    <p class="rating">My Rating: <%= book.rating %> / 5</p>
+                    <p class="short-summary"><%= book.shortsummary %></p>
+                    <div class="buttons">
+                        <!-- <a href="/book/read" class="btn">Read More</a> -->
+                        <form action="/book/read" method="post">
+                            <button type="submit" name="readmore" value="<%=book.id%>" class="btn">Read More</button>
+                        </form>
+                        <form action="/book/delete"  method="POST" style="display:inline;" onsubmit="return confirmDelete()">
+                            <button type="submit" name="delete" value="<%=book.id%>" class="btn remove">Remove</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        <% }) %>
+        <%}%>
+    </main>
+</body>
+<script>
+function confirmDelete() {
+  return confirm("Are you sure you want to remove this book?");
+}
+</script>
+</html>

@@ -1,0 +1,353 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #fafafa;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+header {
+    margin: auto;
+    background: #34495e;
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+    max-width: 900px;
+    margin:  auto;
+    border-radius: 0px 0px 8px 8px;
+    /* box-shadow: 0 6px 18px rgba(0,0,0,0.08); */
+    box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+}
+
+.newbook{
+    margin: auto;
+    background: #34495e;
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+    max-width: 600px;
+    margin:  auto;
+    border-radius: 0px 0px 8px 8px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+
+}
+
+main {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.book-card {
+    display: flex;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    align-items: center;
+}
+
+.book-card img {
+    align-items: center;
+    max-width: 150px;
+    height: 200px;
+    object-fit: cover;
+}
+.book-info {
+    padding-bottom: 5px;
+    padding-right: 6px;
+    padding-left: 15px;
+}
+
+.book-info p{
+   display: -webkit-box;       /* needed for multi-line ellipsis */
+  -webkit-line-clamp: 3;      /* number of lines before truncating */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 0.95rem;          /* slightly smaller text */
+  line-height: 1.5;            /* better readability */
+  color: #555;                 /* softer gray color */
+  margin-top: 5px;
+}
+
+.book-info p.rating{
+    font-weight: bold;
+}
+
+.book-info h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 8px 0;
+}
+
+.book-info h2 p{
+    font-size:larger;
+    margin-bottom: 15px;
+  color: #2c3e50; /* Deep elegant shade */
+  text-decoration: none; /* Remove default underline */
+  letter-spacing: 0.3px;
+  transition: color 0.25s ease, text-decoration 0.25s ease;
+}
+
+.book-info h2 p:hover {
+  color: #1a73e8; /* Refined blue accent */
+  /* text-decoration: underline; Subtle hover underline */
+}
+
+.rating {
+    font-weight: bold;
+    margin: 0.5rem 0;
+}
+
+.short-summary {
+    margin-bottom: 1rem;
+}
+
+.buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.btn {
+    background: #4A90E2;
+    color: white;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 5px;
+    font-size: 18px;
+    /* height: 36px; */
+}
+.btn.remove {
+    background: #E94E4E;
+    font-size: large;
+    /* height: 36px; */
+    /* padding-bottom: 5px; */
+}
+
+.buttons .btn:hover {
+  background-color: #477bb8; /* darker blue */
+  transform: scale(1.05);
+}
+
+/* Hover effect for remove button */
+.buttons .btn.remove:hover {
+  background-color: #a63030; /* darker red */
+  transform: scale(1.05);
+}
+.detail-header {
+    padding: 1rem;
+    background: #f0f0f0;
+    text-align: right;
+}
+
+.btn-add-book {
+    display: inline-block;
+    background-color: #f1c40f;
+    color: black;
+    padding: 10px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-add-book:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+.add-book-container {
+    margin-top: 10px;
+}
+.back-btn {
+    color: #4A90E2;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.book-detail {
+    display: flex;
+    gap: 1rem;
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.notes-section {
+    background: white;
+    margin-top: 1.5rem;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.edit-btn {
+    margin-top: 0.5rem;
+}
+
+.add-book-form {
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.add-book-form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.add-book-form input,
+.add-book-form textarea {
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+.btn.add {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.btn.add:hover {
+    background-color: #45a049;
+}
+
+
+@media (max-width: 480px) {
+    header .newbook{
+        width: auto;
+    }
+    header.newbook h1 {
+        font-size: 1.3rem;
+    }
+
+    .add-book-form {
+        margin: 10px;
+        padding: 12px;
+    }
+
+    .add-book-form label {
+        font-size: 0.9rem;
+    }
+
+    .add-book-form input,
+    .add-book-form textarea {
+        font-size: 0.9rem;
+        padding: 5px;
+    }
+
+    .btn.add {
+        font-size: 0.9rem;
+        padding: 7px 10px;
+    }
+}
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  header p {
+    font-size: 0.95rem;
+    text-align: center;
+  }
+
+  .add-book-container {
+    text-align: center;
+    margin: 10px 0;
+  }
+
+  .btn-add-book {
+    font-size: 0.9rem;
+    padding: 8px 14px;
+  }
+
+  .book-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .book-card img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .book-info {
+    padding: 10px;
+    text-align: center;
+  }
+
+  .book-info h2 p {
+    font-size: 1.1rem;
+  }
+
+  .rating {
+    font-size: 0.9rem;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 10px;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
+
+/* Medium devices (tablet) */
+
+@media (max-width: 768px) {
+    header.newbook {
+        max-width: 100%;
+        border-radius: 0;
+        padding: 1rem;
+    }
+
+    .add-book-form {
+        max-width: 100%;
+        margin: 15px;
+        padding: 15px;
+        gap: 10px;
+    }
+
+    .add-book-form label {
+        font-size: 0.95rem;
+    }
+
+    .add-book-form input,
+    .add-book-form textarea {
+        font-size: 0.95rem;
+        padding: 6px;
+    }
+
+    .btn.add {
+        font-size: 0.95rem;
+        padding: 8px 12px;
+    }
+}

@@ -1,0 +1,142 @@
+/* Centered wrapper - not full screen */
+.details-wrapper {
+  max-width: 900px;
+  background: #ffffff;
+  margin: 34px auto;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  overflow: hidden;
+}
+
+/* Header (inside wrapper) - matches index color scheme */
+.details-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #34495e;       /* same dark header color you used */
+  color: #ffffff;
+  padding: 18px 22px;
+}
+
+/* Title & rating group */
+.title-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.book-title {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.1;
+}
+
+.book-rating {
+  margin-top: 6px;
+  color: #f1c40f;            /* goldish rating color */
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.rating-value {
+  color: #fff;               /* keep numeric white inside the label for contrast */
+  background: rgba(0,0,0,0.12);
+  padding: 2px 8px;
+  border-radius: 14px;
+  margin-left: 8px;
+  font-weight: 700;
+}
+
+/* Buttons in header */
+.header-buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-edit { background: #f39c12; }
+.btn-done { background: #27ae60; }
+.btn-back { background: #7f8c8d; text-decoration: none; display:inline-flex; align-items:center; justify-content:center; }
+
+/* body layout: cover left, info right */
+.details-body {
+  display: flex;
+  gap: 28px;
+  padding: 22px;
+  align-items: flex-start;
+}
+
+.cover img {
+  width: 220px;
+  height: auto;
+  object-fit: contain;      /* avoids zoom/crop */
+  border-radius: 6px;
+  background: #fafafa;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+/* right column */
+.info {
+  flex: 1;
+  min-width: 280px;
+}
+
+/* section titles */
+.section-title {
+  margin: 0 0 8px 0;
+  font-size: 18px;
+  color: #2c3e50;
+  font-weight: 700;         /* bold "Notes" and "Summary" headings */
+}
+
+/* summary/notes text */
+.summary-section p,
+.notes-section p {
+  margin: 0;
+  color: #34495e;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* textarea styles for edit mode */
+textarea {
+  width: 100%;
+  min-height: 100px;
+  margin-top: 8px;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #d0d7de;
+  font-size: 15px;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+/* divider: single line between summary and notes */
+.divider {
+  height: 1px;
+  background: #e6e9ec;
+  border: none;
+  margin: 18px 0;
+}
+
+/* small responsive tweak */
+@media (max-width: 720px) {
+  .details-body { flex-direction: column; align-items: center; }
+  .cover img { width: 180px; }
+  .details-header { padding: 14px; }
+  .details-body { padding: 16px; }
+  .details-wrapper { margin: 16px; }
+}
