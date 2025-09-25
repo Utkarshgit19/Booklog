@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Book Collection</title>
+    <link rel="stylesheet" href="/styles/auth.css?v=1">
+</head>
+<body>
+
+<header>
+    <h1>Book Collection</h1>
+    <p>Login to access your book library</p>
+</header>
+
+<main>
+    <div class="auth-form-container">
+        <h2>Login</h2>
+        <form action="/auth/login" method="POST">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" placeholder="Enter your email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" placeholder="Enter your password" required>
+            </div>
+
+            <button type="submit" class="btn add">Login</button>
+        </form>
+
+        <p style="text-align:center; margin-top:10px;">
+            Don't have an account? 
+            <a href="/auth/register" style="color:#4A90E2; font-weight:bold;">Register here</a>
+        </p>
+    </div>
+</main>
+
+</body>
+</html>

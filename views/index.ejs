@@ -4,12 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Book Collection</title>
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="/styles/main.css?v=1">
 </head>
 
 <body>
     <header>
-        <h1><%= name %></h1>
+        <% if (currentUser) { %>
+            <form action="/auth/logout" method="POST" class="logout-form" onsubmit="return confirmLogout()">
+            <button type="submit" class="logout-btn">Logout</button>
+            </form>
+        <% } %>
+        <h1>Welcome <%= name %></h1>
         <p><%= summary %></p>
         <div class="add-book-container">
             <form action="/add" method="post">
@@ -30,10 +35,7 @@
                     <p class="rating">My Rating: <%= book.rating %> / 5</p>
                     <p class="short-summary"><%= book.shortsummary %></p>
                     <div class="buttons">
-                        <!-- <a href="/book/read" class="btn">Read More</a> -->
-                        <form action="/book/read" method="post">
-                            <button type="submit" name="readmore" value="<%=book.id%>" class="btn">Read More</button>
-                        </form>
+                        <a href="/book/read/<%= book.id %>" class="btn">Read More</a>
                         <form action="/book/delete"  method="POST" style="display:inline;" onsubmit="return confirmDelete()">
                             <button type="submit" name="delete" value="<%=book.id%>" class="btn remove">Remove</button>
                         </form>
@@ -48,5 +50,8 @@
 function confirmDelete() {
   return confirm("Are you sure you want to remove this book?");
 }
+  function confirmLogout() {
+    return confirm("Are you sure you want to logout?");
+  }
 </script>
 </html>

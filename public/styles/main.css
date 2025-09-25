@@ -351,3 +351,54 @@ main {
         padding: 8px 12px;
     }
 }
+
+header {
+    margin: auto;
+    background: #34495e;
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+    max-width: 900px;
+    border-radius: 0px 0px 8px 8px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+    position: relative; /* allows absolute positioning of logout */
+}
+
+/* logout button pinned to top-right */
+.logout-form {
+    position: absolute;
+    top: 10px;       /* distance from top of header */
+    right: 20px;     /* distance from right edge */
+    margin: 0;
+}
+
+.logout-btn {
+    background-color: #E94E4E;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.logout-btn:hover {
+    background-color: #a63030;
+    transform: scale(1.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .logout-form {
+        top: 10px;
+        right: 10px;
+    }
+    .logout-btn {
+        padding: 6px 12px;
+        font-size: 0.9rem;
+    }
+    header h1 {
+        font-size: 1.3rem;
+    }
+}
